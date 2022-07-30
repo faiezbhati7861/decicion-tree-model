@@ -43,10 +43,10 @@ def main():
    """
     st.markdown(html_temp,unsafe_allow_html=True)
     UserID = st.text_input("UserID","")
-    Gender = st.text_input("Gender","Type Here")
-    Age = st.text_input("Age","Type Here")
-    EstimatedSalary = st.text_input("EstimatedSalary","Type Here")
-    resul=""
+    Gender = st.text_input("Gender","")
+    Age = st.text_input("Age","")
+    EstimatedSalary = st.text_input("EstimatedSalary","")
+    result=""
     if st.button("Predict"):
       result=predict_note_authentication(UserID, Gender,Age,EstimatedSalary)
       st.success('Model has predicted {}'.format(result))
