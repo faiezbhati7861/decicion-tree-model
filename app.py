@@ -20,7 +20,7 @@ model=pickle.load(pickle_in)
 # sc = StandardScaler()
 # X = sc.fit_transform(X)
 def predict_note_authentication(UserID, Gender,Age,EstimatedSalary):
-  output= model.predict(sc.transform([[Age,EstimatedSalary]]))
+  output= model.predict(([[Age,EstimatedSalary]]))
   print("Purchased", output)
   if output==[1]:
     prediction="Item will be purchased"
@@ -42,7 +42,7 @@ def main():
    </div>
    """
     st.markdown(html_temp,unsafe_allow_html=True)
-    UserID = st.text_input("UserID","Type Here")
+    UserID = st.text_input("UserID","")
     Gender = st.text_input("Gender","Type Here")
     Age = st.text_input("Age","Type Here")
     EstimatedSalary = st.text_input("EstimatedSalary","Type Here")
@@ -51,7 +51,7 @@ def main():
       result=predict_note_authentication(UserID, Gender,Age,EstimatedSalary)
       st.success('Model has predicted {}'.format(result))
     if st.button("About"):
-      st.text("Developed by Deepak Moud")
+      st.text("Developed by MUHAMMED FAIEZ BHATI")
       st.text("Head , Department of Computer Engineering")
 
 if __name__=='__main__':
